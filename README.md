@@ -1,7 +1,10 @@
 # django-postmark-incoming
 
-Django conveniences for Postmark incoming emails. Incoming emails are stored in the `IncomingEmail` model.
+Django conveniences for Postmark incoming emails. Incoming emails are stored in the `IncomingEmail` model. Use signals in other apps to detect new emails.
 
+## TODO
+- Processing of Webhook
+- Add Usage section that directs you to add the webhook path in Postmark
 ## Installation
 
 
@@ -21,14 +24,6 @@ Django conveniences for Postmark incoming emails. Incoming emails are stored in 
    ```
 1. OPTIONAL: Use celery for webhook processing: `pip install celery` and add it to requirements. If you don't install celery, it will process webhooks synchronously.
 1. Run `python manage.py migrate` to create the models.
-
-### Django Settings
-- `POSTMARK_INCOMING_WH_SECRET`
-  - Optional
-  - If set, this should be in an environment variable.
-  - If this is set, Postmark webhook processing will verify the webhook signature for authenticity.
-
-## Usage
 
 ## Running the Test Suite
 
